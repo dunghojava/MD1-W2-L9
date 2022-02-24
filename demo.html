@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiếuwcase</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="src1">
+<input type="number" id="src2">
+<input type="number" id="src3">
+<button onclick="tamgiac()">Kết quả</button>
+<p id="ketqua1"></p>
+<p id="ketqua"></p>
+
+  <script>
+      function tamgiac() {
+          let x = +document.getElementById("src1").value;
+          let y = +document.getElementById("src2").value;
+          //let k = +document.getElementById("src3").value;
+          let z = +document.getElementById("src3").value;
+          let tamgiac = false
+          let tamgiacvuong = false
+          let tamgiaccan = false
+          let tamgiacdeu = false
+
+          // Khối 1 --------------------------------------
+          if (((x + y) > z) && ((z + y) > x) && ((x + z) > y)) {
+              tamgiac = true
+          }
+          if (tamgiac) {
+              document.getElementById("ketqua1").innerHTML = "*.) Đây là 1 tam giác "
+          } else {
+              document.getElementById("ketqua").innerHTML = "*) Đây không phải là tam giác"
+          }
+
+          //Khối 2 --------------------------------------
+          if (((x * x) == (y * y) + (z * z)) || ((z * z) == (y * y) + (x * x)) || ((y * y) == (x * x) + (z * z))) {
+              tamgiacvuong = true
+          }
+          if (tamgiacvuong) {
+              document.getElementById("ketqua").innerHTML = "1.) Đây là tam giác vuông"
+          }
+
+          //Khối 3 --------------------------------------
+          if (x == y || y == z || x == z) {
+              tamgiaccan = true
+          }
+          if (tamgiaccan) {
+              document.getElementById("ketqua").innerHTML = "2.) Đây là tam giác cân"
+          }
+
+          //Khối 4 --------------------------------------
+          if (x == y && y == z) {
+              tamgiacdeu = true
+          }
+          if (tamgiacdeu) {
+              document.getElementById("ketqua").innerHTML = "3.) Đây là tam giác đều"
+          }
+
+      }
+
+  </script>
+</body>
+</html>
+</body>
+</html>
